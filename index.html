@@ -1,0 +1,229 @@
+<!DOCTYPE html><html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Burak KOÇ - Resmî Web Sitesi</title>
+<style>
+body {
+  font-family: "Times New Roman", Arial;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+  transition: background 0.3s, color 0.3s, font-size 0.3s;
+}
+body.yuksek-kontrast { background:#000; color:#fff; }
+header {
+  background: #0b6623;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+header img { height: 60px; max-width: 100%; }
+header h1 {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: gold;
+  font-style: italic;
+}
+#saat-tarih {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: white;
+  margin: 0.5rem 0;
+  background: #0b6623;
+  padding: 0.3rem 0;
+  user-select: none;
+  text-shadow: 0 0 5px gold, 0 0 10px gold;
+}
+nav {
+  background: #065a1e;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 0.7rem;
+}
+nav a { color: white; text-decoration: none; font-weight: bold; transition:0.3s; }
+nav a:hover { color: gold; }
+section {
+  max-width: 900px;
+  margin: 1rem auto;
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: background 0.3s, color 0.3s;
+}
+body.yuksek-kontrast section { background:#111; color:#fff; }
+h2 { color: #0b6623; border-bottom: 2px solid #ddd; padding-bottom: 0.5rem; font-size:1.2rem; }
+body.yuksek-kontrast h2 { color: gold; border-color: gold; }
+.socials { display:flex; flex-wrap:wrap; gap:10px; }
+.socials a { flex:1 1 auto; text-align:center; padding:10px; border-radius:8px; background:#0b6623; color:white; text-decoration:none; font-weight:bold; transition:0.3s; }
+body.yuksek-kontrast .socials a { background:gold; color:black; }
+.socials a:hover { background: gold; color:black; }
+form { display:flex; flex-direction:column; gap:10px; max-width:400px; margin:auto; }
+input, textarea, button { padding:10px; border-radius:6px; border:1px solid #ccc; width:100%; }
+body.yuksek-kontrast input, body.yuksek-kontrast textarea { background:#222; color:#fff; border:1px solid #fff; }
+button { background:#0b6623; color:white; border:none; cursor:pointer; font-weight:bold; }
+button:hover { background:gold; color:black; }
+footer { text-align:center; background:#0b6623; color:white; padding:1rem; margin-top:2rem; }
+body.yuksek-kontrast footer { background:#111; color:white; }/* Üç nokta menü */ #uc-nokta { position: fixed; top: 15px; right: 15px; font-size:2rem; cursor:pointer; z-index:1100; color:#0b6623; display:block; } #menu-panel { position: fixed; top: 0; right: -250px; width: 220px; height: 100%; background: white; box-shadow: -4px 0 8px rgba(0,0,0,0.3); padding: 1rem; display: flex; flex-direction: column; gap: 10px; transition: right 0.3s ease; z-index: 1000; } #menu-panel.show { right:0; } #menu-panel a, #menu-panel button { display:block; padding:10px; text-decoration:none; color:#0b6623; border:none; background:none; font-weight:bold; text-align:left; } #menu-panel a:hover, #menu-panel button:hover { background:#0b6623; color:white; border-radius:4px; }
+
+/* Responsive */ @media (max-width: 768px){ nav{display:none;} header img {height:50px;} header h1 {font-size:1.5rem;} }
+
+/* Disleksi Modu */ body.disleksi-mod { font-family:"Times New Roman","Arial"!important; letter-spacing:0.05em !important; line-height:1.6 !important; } </style>
+
+</head>
+<body><header>
+  <img src="assets/bayrak.jpeg" alt="Türk Bayrağı" />
+  <h1>Burak KOÇ</h1>
+  <img src="assets/logo.jpeg" alt="T.C. Burak KOÇ logosu" />
+</header><div id="saat-tarih"></div><!-- Üç nokta menü --><div id="uc-nokta">&#9776;</div>
+<div id="menu-panel">
+  <a href="#hakkinda">Hakkında</a>
+  <a href="#odullervebasarilar">Ödüller</a>
+  <a href="#sosyal">Sosyal Medya</a>
+  <a href="#iletisim">İletişim</a>
+  <a href="#uyeol">Üye Ol</a>
+  <a href="#giris">Giriş</a>
+  <a href="#sohbet">Sohbet</a>
+  <a href="#ara">Ara</a>
+  <button id="kontrast-btn">Yüksek Kontrast</button>
+  <button id="buyut-btn">Yazıyı Büyüt</button>
+  <button id="kucult-btn">Yazıyı Küçült</button>
+  <button id="disleksi-btn">Disleksi Modu</button>
+</div><nav>
+  <a href="#hakkinda">Hakkında</a>
+  <a href="#odullervebasarilar">Ödüller</a>
+  <a href="#sosyal">Sosyal Medya</a>
+  <a href="#iletisim">İletişim</a>
+  <a href="#uyeol">Üye Ol</a>
+  <a href="#giris">Giriş</a>
+  <a href="#sohbet">Sohbet</a>
+  <a href="#ara">Ara</a>
+</nav><section id="hakkinda">
+<h2>Saygıdeğer Sayın Burak KOÇ Hakkında</h2>
+<img src="assets/burak.jpg" 
+     alt="Burak KOÇ" 
+     style="width:180px; display:block; margin: 0 auto 15px auto;">
+<p>Allah'ın Selamı, Rahmeti, Bereketi Üzerinize olsun!<br>
+Saygıdeğer Sayın Burak KOÇ Hakkında Miladi; 10 Eylül 2010 , Hicri; 1 Şevval Tarihi Ramazan Bayramının 2. Günü Kayseri İlinin Melikgazi ilçesinde Teşrifleri olmuştur. Dini: İslam, Ehli Sünnet, Hanefidir. <br>
+Okul Hayatına (okul öncesini temellerini 2014 yılında AHMET ESKİYAPAN İLKÖGRETİM OKULU'nda , İlkokul hayatını AHMET ESKİYAPAN İLKOKUL'unda , Ortaokul Hayatını OSMAN ULUBAŞ SÜMER ORTAOKUL'unda Ve Günümüzde
+Ortaöğretim hayatına (380044), (754471) Ösym, Meb Kurum Kodlu Kayseri / Kocasinan İlçesine Hizmet veren ATATÜRK ANADOLU LİSESİ’nde 2025-2026 Maarif Modeli Eğitim Öğretim Yılı ile Başlamıştır; Allah Kolaylık, Sağlık, Rahmet Eylesin. <br>
+Bu sitenin yenilenmesi ile tüm telif, yayın ve video hakları satın alınmıştır. Tüm hakları saklıdır.</p>
+</section><section id="odullervebasarilar">
+<h2>Ödüller ve Başarılar</h2>
+<ul>
+<li>Kocasinan Belediyesi Robot Festivali Ödülü</li>
+<li>Filistin'e Mektup Yarışması Ödülü</li>
+</ul>
+</section><section id="sosyal">
+<h2>Sosyal Medya-Takip Ediniz...</h2>
+<div class="socials">
+<a href="https://bip.ai/join/38burak38" target="_blank">Bip Kanalı</a>
+<a href="https://www.instagram.com/38._burak_38" target="_blank">Instagram</a>
+<a href="https://www.linkedin.com/in/burak-koç-44209033b" target="_blank">Linkedln</a>
+<a href="https://sosyal.teknofest.app/@38_burak_38" target="_blank">Next Sosyal</a>
+<a href="https://www.snapchat.com/add/burakkoc038" target="_blank">Snapchat</a>
+<a href="https://open.spotify.com/user/31phgf4smb44hgrs5rnpv7o4pvn4" target="_blank">Spotify</a>
+<a href="https://www.facebook.com/share/1JTKKRcZej/" target="_blank">Facebook</a>
+<a href="https://www.whatsapp.com/channel/0029VbAbLoE8vd1Nygia6z0y" target="_blank">Whatsapp Kanalı </a>
+<a href="https://www.tiktok.com/@38._burak_38" target="_blank">Tiktok</a>
+<a href="https://teams.live.com/l/community/FEA4S7nUKQwwiZQnwl?v=g1" target="_blank">Microsoft Teams Kanalı</a>
+<a href="https://x.com/38_Burak_38" target="_blank">X (Twitter)</a>
+<a href="https://t.me/tcburakkoc" target="_blank">Telegram Kanalı</a>
+<a href="https://t.me/Burak_38_38" target="_blank">Telegram</a>
+<a href="https://us05web.zoom.us/launch/chat?src=direct_chat_link&email=bkoc6021%40gmail.com" target="_blank">Zoom Kanalı</a>
+</div>
+</section><section id="iletisim">
+<h2>İletişim</h2>
+<ul>
+<li>bkoc6021@gmail.com</li>
+<li>bkoc6021@outlook.com.tr</li>
+<li>bkoc6021@outlook.com</li>
+<li>bkoc6021@hotmail.com</li>
+<li>bkoc6021@yandex.com.tr</li>
+<li>bkoc6021@yandex.com</li>
+<li>bkoc6021@yahoo.com</li>
+<li>bkoc6021@aol.com</li>
+
+</ul>
+<p>Telefon: <a href="tel:+905518995320">+90 551 899 53 20</a></p>
+</section><section id="uyeol">
+<h2>Üye Ol</h2>
+<form>
+<input type="text" placeholder="Ad Soyad" required />
+<input type="email" placeholder="E-posta" required />
+<input type="password" placeholder="Şifre" required />
+<button type="submit">Üye Ol</button>
+</form>
+</section><section id="giris">
+<h2>Giriş Yap</h2>
+<form>
+<input type="email" placeholder="E-posta" required />
+<input type="password" placeholder="Şifre" required />
+<button type="submit">Giriş Yap</button>
+</form>
+</section><section id="sohbet">
+<h2>Sohbet</h2>
+<textarea rows="5" placeholder="Mesajınızı yazın..."></textarea>
+<button>Gönder</button>
+</section><section id="ara">
+<h2>Ara</h2>
+<form>
+<input type="text" placeholder="Arama yap..." />
+<button type="submit">Ara</button>
+</form>
+</section><footer>
+<p>© 2025 Burak KOÇ® , Burak KOÇ NETWORK™ (BKN@t™) Bilişim Sistemleri - Tüm Hakları Saklıdır. Kullanım ve Telif Hakları bildiriminde belirtilen kurallar çerçevesinde hizmet sunulmaktadır. </p>
+</footer><script>
+// Saat ve tarih
+function istanbulSaatGuncelle(){
+  const now = new Date();
+  const trTime = new Date(now.toLocaleString("en-US",{timeZone:"Europe/Istanbul"}));
+  const gunler=["Hoş Geldiniz... İyi Günler ve Tatiller Dileriz... Pazar","Hoş Geldiniz... İyi Günler Dileriz... Pazartesi","Hoş Geldiniz... İyi Günler Dileriz... Salı","Hoş Geldiniz... İyi Günler Dileriz... Çarşamba","Hoş Geldiniz... İyi Günler Dileriz... Perşembe","Hoş Geldiniz... İyi Günler Dileriz... Cumamız Mübarek Olsun","Hoş Geldiniz... İyi Günler ve Tatiller Dileriz... Cumartesi"];
+  const saat = String(trTime.getHours()).padStart(2,"0");
+  const dakika = String(trTime.getMinutes()).padStart(2,"0");
+  const saniye = String(trTime.getSeconds()).padStart(2,"0");
+  const gun = gunler[trTime.getDay()];
+  const tarih = String(trTime.getDate()).padStart(2,"0");
+  const ay = String(trTime.getMonth()+1).padStart(2,"0");
+  const yil = trTime.getFullYear();
+  document.getElementById("saat-tarih").innerHTML =
+    `${tarih}/${ay}/${yil} - ${gun} &nbsp;&nbsp; ${saat}:${dakika}:${saniye}`;
+}
+setInterval(istanbulSaatGuncelle,1000);
+istanbulSaatGuncelle();
+
+// Üç nokta menü
+const ucNokta = document.getElementById("uc-nokta");
+const menuPanel = document.getElementById("menu-panel");
+ucNokta.addEventListener("click", ()=>{ menuPanel.classList.toggle("show"); });
+document.addEventListener("click", (e)=>{
+  if(!ucNokta.contains(e.target) && !menuPanel.contains(e.target)){
+    menuPanel.classList.remove("show");
+  }
+});
+
+// Erişilebilirlik butonları
+const kontrastBtn = document.getElementById("kontrast-btn");
+const buyutBtn = document.getElementById("buyut-btn");
+const kucultBtn = document.getElementById("kucult-btn");
+const disleksiBtn = document.getElementById("disleksi-btn");
+
+kontrastBtn.addEventListener("click", ()=>{ document.body.classList.toggle("yuksek-kontrast"); });
+buyutBtn.addEventListener("click", ()=>{ document.body.style.fontSize="18px"; });
+kucultBtn.addEventListener("click", ()=>{ document.body.style.fontSize="14px"; });
+disleksiBtn.addEventListener("click", ()=>{ document.body.classList.toggle("disleksi-mod"); });
+</script></body>
+</html>
