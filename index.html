@@ -82,6 +82,38 @@ body.yuksek-kontrast footer { background:#111; color:white; }/* Üç nokta menü
 /* Responsive */ @media (max-width: 768px){ nav{display:none;} header img {height:50px;} header h1 {font-size:1.5rem;} }
 
 /* Disleksi Modu */ body.disleksi-mod { font-family:"Times New Roman","Arial"!important; letter-spacing:0.05em !important; line-height:1.6 !important; } </style>
+}
+
+/* Dil seçici bayrak stili */
+#dil-secici {
+  position: fixed; top: 10px; left: 10px; z-index: 1200;
+  display: flex; gap: 8px;
+}
+.bayrak-btn {
+  font-size: 24px;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 6px;
+  padding: 2px 6px;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+.bayrak-btn:hover {
+  border-color: #0b6623;
+}
+.bayrak-btn.secilen {
+  border-color: #0b6623;
+  background-color: #c8e6c9;
+}
+</style>
+</head>
+<body>
+<!-- Dil seçici bayraklar -->
+<div id="dil-secici" aria-label="Dil Seçici" role="group">
+  <div class="bayrak-btn" data-dil="tr" title="Türkçe" role="button" tabindex="0">🇹🇷</div>
+  <div class="bayrak-btn" data-dil="en" title="English" role="button" tabindex="0">🇬🇧</div>
+  <div class="bayrak-btn" data-dil="de" title="Deutsch" role="button" tabindex="0">🇩🇪</div>
+</div>
 
 </head>
 <body><header>
@@ -224,6 +256,69 @@ const disleksiBtn = document.getElementById("disleksi-btn");
 kontrastBtn.addEventListener("click", ()=>{ document.body.classList.toggle("yuksek-kontrast"); });
 buyutBtn.addEventListener("click", ()=>{ document.body.style.fontSize="18px"; });
 kucultBtn.addEventListener("click", ()=>{ document.body.style.fontSize="14px"; });
-disleksiBtn.addEventListener("click", ()=>{ document.body.classList.toggle("disleksi-mod"); });
-</script></body>
+disleksiBtn.addEventListener("click", ()=>{ document.body.classList.toggle("disleksi-mod");
+ });
+
+  
+ // Dil metinleri (TR, EN, DE)
+  const metinler = {
+    tr: {
+      baslik: "Burak KOÇ",
+      sohbetBaslik: "Sohbet",
+      sohbetPlaceholder: "Mesajınızı yazın...",
+      gonder: "Gönder",
+      sikayetBaslik: "Şikayet Et",
+      sikayetAciklama: 'Şikayet etmek istediğiniz mesajın yanındaki "Şikayet Et" butonuna basınız.'
+    },
+    en: {
+      baslik: "Burak KOÇ",
+      sohbetBaslik: "Chat",
+      sohbetPlaceholder: "Write your message...",
+      gonder: "Send",
+      sikayetBaslik: "Report",
+      sikayetAciklama: 'Please press the "Report" button next to the message you want to report.'
+    },
+    de: {
+      baslik: "Burak KOÇ",
+      sohbetBaslik: "Chat",
+      sohbetPlaceholder: "Schreiben Sie Ihre Nachricht...",
+      gonder: "Senden",
+      sikayetBaslik: "Melden",
+      sikayetAciklama: 'Bitte drücken Sie die Schaltfläche "Melden" neben der Nachricht, die Sie melden möchten.'
+    }
+  };
+
+  const bayrakButonlar = document.querySelectorAll('.bayrak-btn');
+
+  function dilDegistir(dil) {
+    // Metinleri değiştir
+    document.getElementById("baslik-ana").textContent = metinler[dil].baslik;
+    document.getElementById("sohbet-baslik").textContent = metinler[dil].sohbetBaslik;
+    document.getElementById("sohbet-mesaj").placeholder = metinler[dil].sohbetPlaceholder;
+    document.getElementById("gonder-btn").textContent = metinler[dil].gonder;
+    document.getElementById("sikayet-baslik").textContent = metinler[dil].sikayetBaslik;
+    document.querySelector("#sikayet-et p").textContent = metinler[dil].sikayetAciklama;
+
+    // Seçilen bayrağı vurgula
+    bayrakButonlar.forEach(btn => {
+      btn.classList.toggle('secilen', btn.dataset.dil === dil);
+    });
+  }
+
+  bayrakButonlar.forEach(btn => {
+    btn.addEventListener('click', () => {
+      dilDegistir(btn.dataset.dil);
+    });
+    btn.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        dilDegistir(btn.dataset.dil);
+      }
+    });
+  });
+
+  // Sayfa açılır açılmaz Türkçe olsun
+  dilDegistir('tr');
+</script>
+</body>
 </html>
