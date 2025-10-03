@@ -44,6 +44,31 @@ header h1 {
   padding: 0.3rem 0;
   user-select: none;
   text-shadow: 0 0 5px gold, 0 0 10px gold;
+/* Dil seçici bayrak stili */
+    #dil-secici {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 1200;
+      display: flex;
+      gap: 8px;
+    }
+    .bayrak-btn {
+      font-size: 24px;
+      cursor: pointer;
+      user-select: none;
+      border-radius: 6px;
+      padding: 2px 6px;
+      border: 2px solid transparent;
+      transition: border-color 0.3s;
+    }
+    .bayrak-btn:hover {
+      border-color: #0b6623;
+    }
+    .bayrak-btn.secilen {
+      border-color: #0b6623;
+      background-color: #c8e6c9;
+    }
 }
 nav {
   background: #065a1e;
@@ -94,11 +119,11 @@ body.yuksek-kontrast footer { background:#111; color:white; }/* Üç nokta menü
   <strong>Dili Seçin:</strong><br>
   <button onclick="translatePage('tr')">🇹🇷 Türkçe</button>
   <button onclick="translatePage('en')">🇬🇧 English</button>
-  <button onclick="translatePage('ar')">🇸🇦 Arabic</button>
+  <button onclick="translatePage('ar')">🇸🇦 عربي</button>
   <button onclick="translatePage('de')">🇩🇪 Deutsch</button>
-  <button onclick="translatePage('az')">🇦🇿 Azərbaijani</button>
-  <button onclick="translatePage('ja')">🇯🇵 Japanese</button>
-  <button onclick="translatePage('ru')">🇷🇺 Russian</button>
+  <button onclick="translatePage('az')">🇦🇿 Azərbaycanca</button>
+  <button onclick="translatePage('ja')">🇯🇵 日本語</button>
+  <button onclick="translatePage('ru')">🇷🇺 Русский</button>
 </div>
 
   <a href="#hakkinda">Hakkında</a>
@@ -191,9 +216,8 @@ Bu sitenin yenilenmesi ile tüm telif, yayın ve video hakları satın alınmı�
   <input type="email" name="email" placeholder="E-posta" required />
   <input type="tel" name="phone" placeholder="Telefon Numarası" required pattern="\+?\d{10,15}" />
   <input type="password" name="password" placeholder="Şifre" required />
-  <button type="submit">Üye Ol</button>
+  <button type="submit">Kayıt Ol</button>
 </form>
-</section>
 
 <section id="giris">
 <h2>Giriş Yap</h2>
@@ -206,7 +230,6 @@ Bu sitenin yenilenmesi ile tüm telif, yayın ve video hakları satın alınmı�
 
 <section id="Sohbet">
   <h2>Sohbet</h2>
-</form>
   <textarea rows="5" placeholder="Mesajınızı yazın..."></textarea>
   <!-- Dosya yükleme alanı -->
   <div style="margin-top: 10px;">
