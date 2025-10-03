@@ -82,38 +82,6 @@ body.yuksek-kontrast footer { background:#111; color:white; }/* Üç nokta menü
 /* Responsive */ @media (max-width: 768px){ nav{display:none;} header img {height:50px;} header h1 {font-size:1.5rem;} }
 
 /* Disleksi Modu */ body.disleksi-mod { font-family:"Times New Roman","Arial"!important; letter-spacing:0.05em !important; line-height:1.6 !important; } </style>
-}
-
-/* Dil seçici bayrak stili */
-#dil-secici {
-  position: fixed; top: 10px; left: 10px; z-index: 1200;
-  display: flex; gap: 8px;
-}
-.bayrak-btn {
-  font-size: 24px;
-  cursor: pointer;
-  user-select: none;
-  border-radius: 6px;
-  padding: 2px 6px;
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-}
-.bayrak-btn:hover {
-  border-color: #0b6623;
-}
-.bayrak-btn.secilen {
-  border-color: #0b6623;
-  background-color: #c8e6c9;
-}
-</style>
-</head>
-<body>
-<!-- Dil seçici bayraklar -->
-<div id="dil-secici" aria-label="Dil Seçici" role="group">
-  <div class="bayrak-btn" data-dil="tr" title="Türkçe" role="button" tabindex="0">🇹🇷</div>
-  <div class="bayrak-btn" data-dil="en" title="English" role="button" tabindex="0">🇬🇧</div>
-  <div class="bayrak-btn" data-dil="de" title="Deutsch" role="button" tabindex="0">🇩🇪</div>
-</div>
 
 </head>
 <body><header>
@@ -122,6 +90,17 @@ body.yuksek-kontrast footer { background:#111; color:white; }/* Üç nokta menü
   <img src="assets/logo.jpeg" alt="T.C. Burak KOÇ logosu" />
 </header><div id="saat-tarih"></div><!-- Üç nokta menü --><div id="uc-nokta">&#9776;</div>
 <div id="menu-panel">
+<div style="margin-top: 10px; border-top: 1px solid #ccc; padding-top: 10px;">
+  <strong>Dili Seçin:</strong><br>
+  <button onclick="translatePage('tr')">🇹🇷 Türkçe</button>
+  <button onclick="translatePage('en')">🇬🇧 English</button>
+  <button onclick="translatePage('ar')">🇸🇦 عربي</button>
+  <button onclick="translatePage('de')">🇩🇪 Deutsch</button>
+  <button onclick="translatePage('az')">🇦🇿 Azərbaycanca</button>
+  <button onclick="translatePage('ja')">🇯🇵 日本語</button>
+  <button onclick="translatePage('ru')">🇷🇺 Русский</button>
+</div>
+
   <a href="#hakkinda">Hakkında</a>
   <a href="#odullervebasarilar">Ödüller</a>
   <a href="#sosyal">Sosyal Medya</a>
@@ -134,7 +113,10 @@ body.yuksek-kontrast footer { background:#111; color:white; }/* Üç nokta menü
   <button id="buyut-btn">Yazıyı Büyüt</button>
   <button id="kucult-btn">Yazıyı Küçült</button>
   <button id="disleksi-btn">Disleksi Modu</button>
-</div><nav>
+<button id="sesli-okuma-btn">Sesli Okuma</button>
+</div>
+
+<nav>
   <a href="#hakkinda">Hakkında</a>
   <a href="#odullervebasarilar">Ödüller</a>
   <a href="#sosyal">Sosyal Medya</a>
@@ -143,16 +125,27 @@ body.yuksek-kontrast footer { background:#111; color:white; }/* Üç nokta menü
   <a href="#giris">Giriş</a>
   <a href="#sohbet">Sohbet</a>
   <a href="#ara">Ara</a>
-</nav><section id="hakkinda">
+</nav>
+
+<section id="hakkinda">
 <h2>Saygıdeğer Sayın Burak KOÇ Hakkında</h2>
 <img src="assets/burak.jpg" 
      alt="Burak KOÇ" 
      style="width:180px; display:block; margin: 0 auto 15px auto;">
 <p>Allah'ın Selamı, Rahmeti, Bereketi Üzerinize olsun!<br>
-Saygıdeğer Sayın Burak KOÇ Hakkında Miladi; 10 Eylül 2010 , Hicri; 1 Şevval Tarihi Ramazan Bayramının 2. Günü Kayseri İlinin Melikgazi ilçesinde Teşrifleri olmuştur. Dini: İslam, Ehli Sünnet, Hanefidir. <br>
+Saygıdeğer Burak KOÇ Hakkında Miladi; 10 Eylül 2010 , Hicri; 1 Şevval Tarihi Ramazan Bayramının 2. Günü Kayseri İlinin Melikgazi ilçesinde Teşrifleri olmuştur. Dini: İslam, Ehli Sünnet, Hanefidir. <br>
 Okul Hayatına (okul öncesini temellerini 2014 yılında AHMET ESKİYAPAN İLKÖGRETİM OKULU'nda , İlkokul hayatını AHMET ESKİYAPAN İLKOKUL'unda , Ortaokul Hayatını OSMAN ULUBAŞ SÜMER ORTAOKUL'unda Ve Günümüzde
 Ortaöğretim hayatına (380044), (754471) Ösym, Meb Kurum Kodlu Kayseri / Kocasinan İlçesine Hizmet veren ATATÜRK ANADOLU LİSESİ’nde 2025-2026 Maarif Modeli Eğitim Öğretim Yılı ile Başlamıştır; Allah Kolaylık, Sağlık, Rahmet Eylesin. <br>
 Bu sitenin yenilenmesi ile tüm telif, yayın ve video hakları satın alınmıştır. Tüm hakları saklıdır.</p>
+</section><section id="haberler">
+  <h2>Haberler</h2>
+  <article>
+    <h3>YENİ! DİLLERE UYUMLU, DİSLEKSİ VE GÖRME ENGELLİ MODLU İLE WEB SİTEMİZ YAYINDA!</h3>
+    <p>
+      Saygıdeğer Burak KOÇ tarafına ait olan 2025-2026 1. ve Güz döneminde web sitemiz internet üzerinde yayınlandı! 2023 yılından itibaren test aşamasında olan web sitemizi (E-Tuğra , Türkiye Bilimsel ve Teknolojik Araştırma Kurumu ve Bilgi Teknolojileri ve İletişim Kurumu) tarafından onay verildi. Yabancı dil programı ile desteklendi. Katılımcılara dijitalleştirilmiş web sitemiz hakkında bilgiler verdi.
+    </p>
+  </article>
+</section>
 </section><section id="odullervebasarilar">
 <h2>Ödüller ve Başarılar</h2>
 <ul>
@@ -193,37 +186,66 @@ Bu sitenin yenilenmesi ile tüm telif, yayın ve video hakları satın alınmı�
 <p>Telefon: <a href="tel:+905518995320">+90 551 899 53 20</a></p>
 </section><section id="uyeol">
 <h2>Üye Ol</h2>
-<form>
-<input type="text" placeholder="Ad Soyad" required />
-<input type="email" placeholder="E-posta" required />
-<input type="password" placeholder="Şifre" required />
-<button type="submit">Üye Ol</button>
+<form action="/register" method="POST">
+  <input type="text" name="fullname" placeholder="Ad Soyad" required />
+  <input type="email" name="email" placeholder="E-posta" required />
+  <input type="tel" name="phone" placeholder="Telefon Numarası" required pattern="\+?\d{10,15}" />
+  <input type="password" name="password" placeholder="Şifre" required />
+  <button type="submit">Üye Ol</button>
 </form>
-</section><section id="giris">
+</section>
+
+<section id="giris">
 <h2>Giriş Yap</h2>
-<form>
-<input type="email" placeholder="E-posta" required />
-<input type="password" placeholder="Şifre" required />
-<button type="submit">Giriş Yap</button>
+<form action="/login" method="POST">
+  <input type="email" name="email" placeholder="E-posta" required />
+  <input type="password" name="password" placeholder="Şifre" required />
+  <button type="submit">Giriş Yap</button>
 </form>
-</section><section id="sohbet">
-<h2>Sohbet</h2>
-<textarea rows="5" placeholder="Mesajınızı yazın..."></textarea>
-<button>Gönder</button>
-</section><section id="ara">
+</section>
+
+<section id="Sohbet">
+  <h2>Sohbet</h2>
+</form>
+  <textarea rows="5" placeholder="Mesajınızı yazın..."></textarea>
+  <!-- Dosya yükleme alanı -->
+  <div style="margin-top: 10px;">
+    <label for="fileInput">Dosya ekle:</label>
+    <input type="file" id="fileInput" />
+    <span id="fileName" style="margin-left: 10px; font-style: italic;"></span>
+  </div>
+  <button>Gönder</button>
+</section>
+</form>
+<script>
+  const fileInput = document.getElementById('fileInput');
+  const fileNameDisplay = document.getElementById('fileName');
+
+  fileInput.addEventListener('change', () => {
+    if (fileInput.files.length > 0) {
+      fileNameDisplay.textContent = fileInput.files[0].name;
+    } else {
+      fileNameDisplay.textContent = '';
+    }
+  });
+</script>
+
+</section><section id="Ara">
 <h2>Ara</h2>
 <form>
 <input type="text" placeholder="Arama yap..." />
 <button type="submit">Ara</button>
 </form>
 </section><footer>
-<p>© 2025 Burak KOÇ® , Burak KOÇ NETWORK™ (BKN@t™) Bilişim Sistemleri - Tüm Hakları Saklıdır. Kullanım ve Telif Hakları bildiriminde belirtilen kurallar çerçevesinde hizmet sunulmaktadır. </p>
+
+<p>© 2025 Burak KOÇ® , Burak KOÇ NETWORK™ ve BKN@t™ Bilişim Sistemleri - Tüm Hakları Saklıdır. Kullanım ve Telif Hakları bildiriminde belirtilen kurallar çerçevesinde hizmet sunulmaktadır. </p>
+
 </footer><script>
 // Saat ve tarih
 function istanbulSaatGuncelle(){
   const now = new Date();
   const trTime = new Date(now.toLocaleString("en-US",{timeZone:"Europe/Istanbul"}));
-  const gunler=["Hoş Geldiniz... İyi Günler ve Tatiller Dileriz... Pazar","Hoş Geldiniz... İyi Günler Dileriz... Pazartesi","Hoş Geldiniz... İyi Günler Dileriz... Salı","Hoş Geldiniz... İyi Günler Dileriz... Çarşamba","Hoş Geldiniz... İyi Günler Dileriz... Perşembe","Hoş Geldiniz... İyi Günler Dileriz... Cumamız Mübarek Olsun","Hoş Geldiniz... İyi Günler ve Tatiller Dileriz... Cumartesi"];
+  const gunler=["Hoş Geldiniz... İyi Günler ve Tatiller Dileriz... Pazar","Hoş Geldiniz... İyi Günler Dileriz... Pazartesi","Hoş Geldiniz... İyi Günler Dileriz... Salı","Hoş Geldiniz... İyi Günler Dileriz... Çarşamba","Hoş Geldiniz... İyi Günler Dileriz... Perşembe","Hoş Geldiniz... İyi Günler Dileriz... Cumamız Mübarek Olsun... Cuma","Hoş Geldiniz... İyi Günler ve Tatiller Dileriz... Cumartesi"];
   const saat = String(trTime.getHours()).padStart(2,"0");
   const dakika = String(trTime.getMinutes()).padStart(2,"0");
   const saniye = String(trTime.getSeconds()).padStart(2,"0");
@@ -236,7 +258,6 @@ function istanbulSaatGuncelle(){
 }
 setInterval(istanbulSaatGuncelle,1000);
 istanbulSaatGuncelle();
-
 // Üç nokta menü
 const ucNokta = document.getElementById("uc-nokta");
 const menuPanel = document.getElementById("menu-panel");
@@ -256,69 +277,38 @@ const disleksiBtn = document.getElementById("disleksi-btn");
 kontrastBtn.addEventListener("click", ()=>{ document.body.classList.toggle("yuksek-kontrast"); });
 buyutBtn.addEventListener("click", ()=>{ document.body.style.fontSize="18px"; });
 kucultBtn.addEventListener("click", ()=>{ document.body.style.fontSize="14px"; });
-disleksiBtn.addEventListener("click", ()=>{ document.body.classList.toggle("disleksi-mod");
- });
+disleksiBtn.addEventListener("click", ()=>{ document.body.classList.toggle("disleksi-mod"); });
+const sesliOkumaBtn = document.getElementById("sesli-okuma-btn");
 
-  
- // Dil metinleri (TR, EN, DE)
-  const metinler = {
-    tr: {
-      baslik: "Burak KOÇ",
-      sohbetBaslik: "Sohbet",
-      sohbetPlaceholder: "Mesajınızı yazın...",
-      gonder: "Gönder",
-      sikayetBaslik: "Şikayet Et",
-      sikayetAciklama: 'Şikayet etmek istediğiniz mesajın yanındaki "Şikayet Et" butonuna basınız.'
-    },
-    en: {
-      baslik: "Burak KOÇ",
-      sohbetBaslik: "Chat",
-      sohbetPlaceholder: "Write your message...",
-      gonder: "Send",
-      sikayetBaslik: "Report",
-      sikayetAciklama: 'Please press the "Report" button next to the message you want to report.'
-    },
-    de: {
-      baslik: "Burak KOÇ",
-      sohbetBaslik: "Chat",
-      sohbetPlaceholder: "Schreiben Sie Ihre Nachricht...",
-      gonder: "Senden",
-      sikayetBaslik: "Melden",
-      sikayetAciklama: 'Bitte drücken Sie die Schaltfläche "Melden" neben der Nachricht, die Sie melden möchten.'
-    }
-  };
+let konusmaAktif = false;
+let utterance;
 
-  const bayrakButonlar = document.querySelectorAll('.bayrak-btn');
+sesliOkumaBtn.addEventListener("click", () => {
+  if (!konusmaAktif) {
+    // Sayfadaki görünür metni alalım, istersen özelleştirebiliriz
+    const metin = document.body.innerText;
 
-  function dilDegistir(dil) {
-    // Metinleri değiştir
-    document.getElementById("baslik-ana").textContent = metinler[dil].baslik;
-    document.getElementById("sohbet-baslik").textContent = metinler[dil].sohbetBaslik;
-    document.getElementById("sohbet-mesaj").placeholder = metinler[dil].sohbetPlaceholder;
-    document.getElementById("gonder-btn").textContent = metinler[dil].gonder;
-    document.getElementById("sikayet-baslik").textContent = metinler[dil].sikayetBaslik;
-    document.querySelector("#sikayet-et p").textContent = metinler[dil].sikayetAciklama;
+    utterance = new SpeechSynthesisUtterance(metin);
+    utterance.lang = "tr-TR"; // Türkçe için dil ayarı
 
-    // Seçilen bayrağı vurgula
-    bayrakButonlar.forEach(btn => {
-      btn.classList.toggle('secilen', btn.dataset.dil === dil);
-    });
+    speechSynthesis.speak(utterance);
+    konusmaAktif = true;
+    sesliOkumaBtn.textContent = "🔇 Okumayı Durdur";
+  } else {
+    speechSynthesis.cancel();
+    konusmaAktif = false;
+    sesliOkumaBtn.textContent = "🔊 Sesli Okuma";
   }
+});
 
-  bayrakButonlar.forEach(btn => {
-    btn.addEventListener('click', () => {
-      dilDegistir(btn.dataset.dil);
-    });
-    btn.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        dilDegistir(btn.dataset.dil);
-      }
-    });
-  });
 
-  // Sayfa açılır açılmaz Türkçe olsun
-  dilDegistir('tr');
+  function translatePage(lang) {
+    const currentUrl = window.location.href;
+    const encodedUrl = encodeURIComponent(currentUrl);
+    const translateUrl = `https://translate.google.com/translate?hl=${lang}&sl=auto&tl=${lang}&u=${encodedUrl}`;
+    window.location.href = translateUrl;
+  }
 </script>
+
 </body>
 </html>
