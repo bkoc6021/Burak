@@ -277,7 +277,7 @@ Bu sitenin yenilenmesi ile tüm telif, yayın ve video hakları satın alınmı�
 function istanbulSaatGuncelle(){
   const now = new Date();
   const trTime = new Date(now.toLocaleString("en-US",{timeZone:"Europe/Istanbul"}));
-  const gunler=["Hoş Geldiniz... İyi Günler ve Tatiller Dileriz... Ahilik Kültürü Haftası... Pazar","Hoş Geldiniz... İyi Günler Dileriz... Dünya Afet Azaltma Günü Pazartesi","Hoş Geldiniz... İyi Günler Dileriz... Salı","Hoş Geldiniz... İyi Günler Dileriz... Çarşamba","Hoş Geldiniz... İyi Günler Dileriz... Perşembe","Hoş Geldiniz... İyi Günler Dileriz... Cumamız Mübarek Olsun... Ahilik Kültürü Haftası Cuma","Hoş Geldiniz... İyi Günler ve Tatiller Dileriz... Ahilik Kültürü Haftası... Cumartesi"];
+  const gunler=["Hoş Geldiniz... İyi Günler ve Tatiller Dileriz... Pazar","Hoş Geldiniz... İyi Günler Dileriz... Pazartesi","Hoş Geldiniz... İyi Günler Dileriz... Salı","Hoş Geldiniz... İyi Günler Dileriz... Çarşamba","Hoş Geldiniz... İyi Günler Dileriz... Perşembe","Hoş Geldiniz... İyi Günler Dileriz... Cumamız Mübarek Olsun... Cuma","Hoş Geldiniz... İyi Günler ve Tatiller Dileriz... Cumartesi"];
   const saat = String(trTime.getHours()).padStart(2,"0");
   const dakika = String(trTime.getMinutes()).padStart(2,"0");
   const saniye = String(trTime.getSeconds()).padStart(2,"0");
