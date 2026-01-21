@@ -1,350 +1,76 @@
-<!DOCTYPE html><html lang="tr">
+<!DOCTYPE html>
+<html lang="tr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Burak KOÇ - Resmî Web Sitesi</title>
-<style>
-body {
-  font-family: "Times New Roman", Arial;
-  margin: 0;
-  padding: 0;
-  background-color: #f9f9f9;
-  color: #333;
-  transition: background 0.3s, color 0.3s, font-size 0.3s;
-}
-body.yuksek-kontrast { background:#000; color:#fff; }
-header {
-  background: #0b6623;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
-  flex-wrap: wrap;
-}
-header img { height: 60px; max-width: 100%; }
-header h1 {
-  flex: 1;
-  text-align: center;
-  margin: 0;
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: gold;
-  font-style: italic;
-}
-#saat-tarih {
-  width: 100%;
-  text-align: center;
-  font-weight: bold;
-  font-style: italic;
-  font-size: 0.9rem;
-  color: white;
-  margin: 0.5rem 0;
-  background: #0b6623;
-  padding: 0.3rem 0;
-  user-select: none;
-  text-shadow: 0 0 5px gold, 0 0 10px gold;
-/* Dil seçici bayrak stili */
-    #dil-secici {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      z-index: 1200;
-      display: flex;
-      gap: 8px;
-    }
-    .bayrak-btn {
-      font-size: 24px;
-      cursor: pointer;
-      user-select: none;
-      border-radius: 6px;
-      padding: 2px 6px;
-      border: 2px solid transparent;
-      transition: border-color 0.3s;
-    }
-    .bayrak-btn:hover {
-      border-color: #0b6623;
-    }
-    .bayrak-btn.secilen {
-      border-color: #0b6623;
-      background-color: #c8e6c9;
-    }
-}
-nav {
-  background: #065a1e;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  padding: 0.7rem;
-}
-nav a { color: white; text-decoration: none; font-weight: bold; transition:0.3s; }
-nav a:hover { color: gold; }
-section {
-  max-width: 900px;
-  margin: 1rem auto;
-  background: white;
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: background 0.3s, color 0.3s;
-}
-body.yuksek-kontrast section { background:#111; color:#fff; }
-h2 { color: #0b6623; border-bottom: 2px solid #ddd; padding-bottom: 0.5rem; font-size:1.2rem; }
-body.yuksek-kontrast h2 { color: gold; border-color: gold; }
-.socials { display:flex; flex-wrap:wrap; gap:10px; }
-.socials a { flex:1 1 auto; text-align:center; padding:10px; border-radius:8px; background:#0b6623; color:white; text-decoration:none; font-weight:bold; transition:0.3s; }
-body.yuksek-kontrast .socials a { background:gold; color:black; }
-.socials a:hover { background: gold; color:black; }
-form { display:flex; flex-direction:column; gap:10px; max-width:400px; margin:auto; }
-input, textarea, button { padding:10px; border-radius:6px; border:1px solid #ccc; width:100%; }
-body.yuksek-kontrast input, body.yuksek-kontrast textarea { background:#222; color:#fff; border:1px solid #fff; }
-button { background:#0b6623; color:white; border:none; cursor:pointer; font-weight:bold; }
-button:hover { background:gold; color:black; }
-footer { text-align:center; background:#0b6623; color:white; padding:1rem; margin-top:2rem; }
-body.yuksek-kontrast footer { background:#111; color:white; }/* Üç nokta menü */ #uc-nokta { position: fixed; top: 15px; right: 15px; font-size:2rem; cursor:pointer; z-index:1100; color:#09fb52; display:block; } #menu-panel { position: fixed; top: 0; right: -250px; width: 220px; height: 100%; background: white; box-shadow: -4px 0 8px rgba(0,0,0,0.3); padding: 1rem; display: flex; flex-direction: column; gap: 10px; transition: right 0.3s ease; z-index: 1000; } #menu-panel.show { right:0; } #menu-panel a, #menu-panel button { display:block; padding:10px; text-decoration:none; color:#03c03c; border:none; background:none; font-weight:bold; text-align:left; } #menu-panel a:hover, #menu-panel button:hover { background:#ffd700; color:white; border-radius:4px; }
+    <meta charset="UTF-8">
+    <title>T.C. BURAK KOÇ BAKIM ÇALIŞMASI YAPILMAKTADIR.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-/* Responsive */ @media (max-width: 768px){ nav{display:none;} header img {height:50px;} header h1 {font-size:1.5rem;} }
+    <!-- Favicon (opsiyonel) -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-/* Disleksi Modu */ body.disleksi-mod { font-family:"Times New Roman","Arial"!important; letter-spacing:0.05em !important; line-height:1.6 !important; } </style>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Times New Roman", Times, serif;
+            background-color: #fdf2f2;
+        }
 
+        .wrapper {
+            max-width: 900px;
+            margin: 60px auto;
+            text-align: center;
+        }
+
+        .logo {
+            width: 110px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            color: #c62828;
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .box {
+            background-color: #fde7e7;
+            border: 1px solid #f3caca;
+            border-radius: 6px;
+            padding: 25px 30px;
+            color: #5a2a2a;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .box strong {
+            display: block;
+            margin-bottom: 12px;
+        }
+    </style>
 </head>
-<body><header>
-  <img src="assets/bayrak.jpeg" alt="Türk Bayrağı" />
-  <h1>Burak KOÇ</h1>
-  <img src="assets/logo.jpeg" alt="T.C. Burak KOÇ logosu" />
-</header><div id="saat-tarih"></div><!-- Üç nokta menü --><div id="uc-nokta">&#9776;</div>
-<div id="menu-panel">
-<div style="margin-top: 10px; border-top: 1px solid #ccc; padding-top: 10px;">
-  <strong>Dili Seçin:</strong><br>
-  <button onclick="translatePage('tr')">🇹🇷 Türkçe</button>
-  <button onclick="translatePage('en')">🇬🇧 English</button>
-  <button onclick="translatePage('ar')">🇸🇦 عربي</button>
-  <button onclick="translatePage('de')">🇩🇪 Deutsch</button>
-  <button onclick="translatePage('az')">🇦🇿 Azərbaycanca</button>
-  <button onclick="translatePage('ja')">🇯🇵 日本語</button>
-  <button onclick="translatePage('ru')">🇷🇺 Русский</button>
-</div>
+<body>
 
-  <a href="#hakkinda">Hakkında</a>
-  <a href="#odullervebasarilar">Ödüller</a>
-  <a href="#sosyal">Sosyal Medya</a>
-  <a href="#iletisim">İletişim</a>
-  <a href="#uyeol">Üye Ol</a>
-  <a href="#giris">Giriş</a>
-  <a href="#sohbet">Sohbet</a>
-  <a href="#ara">Ara</a>
-  <button id="kontrast-btn">Yüksek Kontrast</button>
-  <button id="buyut-btn">Yazıyı Büyüt</button>
-  <button id="kucult-btn">Yazıyı Küçült</button>
-  <button id="disleksi-btn">Disleksi Modu</button>
-<button id="sesli-okuma-btn">Sesli Okuma</button>
-</div>
+    <div class="wrapper">
 
-<nav>
-  <a href="#hakkinda">Hakkında</a>
-  <a href="#odullervebasarilar">Ödüller</a>
-  <a href="#sosyal">Sosyal Medya</a>
-  <a href="#iletisim">İletişim</a>
-  <a href="#uyeol">Üye Ol</a>
-  <a href="#giris">Giriş</a>
-  <a href="#sohbet">Sohbet</a>
-  <a href="#ara">Ara</a>
-</nav>
+        <!-- LOGO -->
+        <img src="Logo.png" class="logo" alt="T.C. Burak KOÇ">
 
-<section id="hakkinda">
-<h2>Saygıdeğer Burak KOÇ Hakkında</h2>
-<img src="assets/burak.jpg" 
-     alt="Burak KOÇ" 
-     style="width:180px; display:block; margin: 0 auto 15px auto;">
-<p>Allah'ın Selamı, Rahmeti, Bereketi Üzerinize olsun!<br>
-Saygıdeğer Burak KOÇ Hakkında Miladi; 10 Eylül 2010 , Hicri; 1 Şevval Tarihi Ramazan Bayramının 2. Günü Kayseri İlinin Melikgazi ilçesinde Teşrifleri olmuştur. Dini: İslam, Ehli Sünnet, Hanefidir. <br>
-Okul Hayatına (okul öncesini temellerini 2014 yılında AHMET ESKİYAPAN İLKÖGRETİM OKULU'nda , İlkokul hayatını AHMET ESKİYAPAN İLKOKUL'unda , Ortaokul Hayatını OSMAN ULUBAŞ SÜMER ORTAOKUL'unda Ve Günümüzde
-Ortaöğretim hayatına (380044), (754471) Ösym, Meb Kurum Kodlu Kayseri / Kocasinan İlçesine Hizmet veren ATATÜRK ANADOLU LİSESİ’nde 2025-2026 Maarif Modeli Eğitim Öğretim Yılı ile Başlamıştır; Allah Kolaylık, Sağlık, Rahmet Eylesin. <br>
-Bu sitenin yenilenmesi ile tüm telif, yayın ve video hakları satın alınmıştır. Tüm hakları saklıdır.</p>
-  </section><section id="haberler">
-  <h2>YILBAŞINIZ KUTLU OLSUN.  </h2>
-  </p> 
-Yılbaşınız kutlu olsun 21. Yüzyılın 26. Yılı Miladi 2026 yılına mutlu, mesut, hayırlı, kazasız, belasız, musibetsiz, doğru, düsürt, adaletli, görkemli, izzetli, şerefli, abdestli, namazlı, imanlı olmayı, iyi günler görmeyi, bu sene bize tekrardan en mutlu ülkesi olmayı,
-bu yeni yıla Allah'ım nasip eylesin. Amin...     
-  </p> 
-  <article>
-    <h3>ATEŞKES</h3>
-    <p>
-    Filistin Devleti'nde İsrail Devleti'nin yaptığı "Gazze Soykırımı" ağır bir insanlık suçu, yok etme kastı suçlarını İsrail Devleti'nin "ATEŞKES" yazılı kağıt parçasıyla gizledikleri gün 09.10.2025 idir. Allahım bu duamızı Kâbe-i Şerif'i görünce ilk duamız gibi kabul etsin, Allah'ım sen Filistin Devleti'ne yapılan zulmü, soykırımı, insanlık suçunu işledi. İsrail Devleti "Ateşkes" isimli bir kağıt parçasına Filistin Devleti bağlı değildi bu adalet değildir, Filistin Devleti'ne yardım et İsrail Devleti'ini ıslah eyle, yaptıklarından pişman olup mağdur ailelere yardım etsinler, evler yapsınlar, sığınma yeri yapsınlar, yemek versinler onlar Filistin Devleti'ne yaptıkları ölümü düşünseydi yapmazlardı. Bana kalmayacak diye farketsinler. Amin...
-    </p>
-  </article>
-</section>
-</section><section id="bkwebhaberler">
-  <h2>BKWEB Haberler</h2>
-  <article>
-    <h3>YENİ! DİLLERE UYUMLU, DİSLEKSİ VE GÖRME ENGELLİ MODLU İLE WEB SİTEMİZ YAYINDA!</h3>
-    <p>
-      Saygıdeğer Burak KOÇ tarafına ait olan 2025-2026 1. ve Güz döneminde web sitemiz internet üzerinde yayınlandı! 2023 yılından itibaren test aşamasında olan web sitemizi (E-Tuğra , Türkiye Bilimsel ve Teknolojik Araştırma Kurumu ve Bilgi Teknolojileri ve İletişim Kurumu) tarafından onay verildi. Yabancı dil programı ile desteklendi. Katılımcılara dijitalleştirilmiş web sitemiz hakkında bilgiler verdi.
-    </p>
-  </article>
-</section>
-</section><section id="odullervebasarilar">
-<h2>Ödüller ve Başarılar</h2>
-<ul>
-<li>Kocasinan Belediyesi Robot Festivali Ödülü</li>
-<li>Filistin'e Mektup Yarışması Ödülü</li>
-</ul>
-</section><section id="sosyal">
-<h2>Sosyal Medya-Takip Ediniz...</h2>
-<div class="socials">
-<a href="https://bip.ai/join/38burak38" target="_blank">Bip Kanalı</a>
-<a href="https://www.instagram.com/38._burak_38" target="_blank">Instagram</a>
-<a href="https://www.linkedin.com/in/burak-koç-44209033b" target="_blank">Linkedln</a>
-<a href="https://sosyal.teknofest.app/@38_burak_38" target="_blank">Next Sosyal</a>
-<a href="https://www.snapchat.com/add/burakkoc038" target="_blank">Snapchat</a>
-<a href="https://open.spotify.com/user/31phgf4smb44hgrs5rnpv7o4pvn4" target="_blank">Spotify</a>
-<a href="https://www.facebook.com/share/1JTKKRcZej/" target="_blank">Facebook</a>
-<a href="https://www.whatsapp.com/channel/0029VbAbLoE8vd1Nygia6z0y" target="_blank">Whatsapp Kanalı </a>
-<a href="https://www.tiktok.com/@38._burak_38" target="_blank">Tiktok</a>
-<a href="https://teams.live.com/l/community/FEA4S7nUKQwwiZQnwl?v=g1" target="_blank">Microsoft Teams Kanalı</a>
-<a href="https://x.com/38_Burak_38" target="_blank">X (Twitter)</a>
-<a href="https://t.me/tcburakkoc" target="_blank">Telegram Kanalı</a>
-<a href="https://t.me/Burak_38_38" target="_blank">Telegram</a>
-<a href="https://us05web.zoom.us/launch/chat?src=direct_chat_link&email=bkoc6021%40gmail.com" target="_blank">Zoom Kanalı</a>
-</div>
-</section><section id="iletisim">
-<h2>İletişim</h2>
-<ul>
-<li>bkoc6021@gmail.com</li>
-<li>bkoc6021@outlook.com.tr</li>
-<li>bkoc6021@outlook.com</li>
-<li>bkoc6021@hotmail.com</li>
-<li>bkoc6021@yandex.com.tr</li>
-<li>bkoc6021@yandex.com</li>
-<li>bkoc6021@yahoo.com</li>
-<li>bkoc6021@aol.com</li>
+        <h1>Bakım Çalışması Yapılmaktadır</h1>
 
-</ul>
-<p>Telefon: <a href="tel:+905518995320">+90 551 899 53 20</a></p>
-</section><section id="uyeol">
-<h2>Üye Ol</h2>
-<form action="/register" method="POST">
-  <input type="text" name="fullname" placeholder="Ad Soyad" required />
-  <input type="email" name="email" placeholder="E-posta" required />
-  <input type="tel" name="phone" placeholder="Telefon Numarası" required pattern="\+?\d{10,15}" />
-  <input type="password" name="password" placeholder="Şifre" required />
-  <button type="submit">Kayıt Ol</button>
-</form>
+        <div class="box">
+            <strong>Değerli Ziyaretçimiz,</strong>
 
-<section id="giris">
-<h2>Giriş Yap</h2>
-<form action="/login" method="POST">
-  <input type="email" name="email" placeholder="E-posta" required />
-  <input type="password" name="password" placeholder="Şifre" required />
-  <button type="submit">Giriş Yap</button>
-</form>
-</section>
+            Web sitemiz, yürütülmekte olan bakım çalışmaları sebebiyle
+            geçici olarak hizmet verememektedir.<br><br>
 
-<section id="Sohbet">
-  <h2>Sohbet</h2>
-  <textarea rows="5" placeholder="Mesajınızı yazın..."></textarea>
-  <!-- Dosya yükleme alanı -->
-  <div style="margin-top: 10px;">
-    <label for="fileInput">Dosya ekle:</label>
-    <input type="file" id="fileInput" />
-    <span id="fileName" style="margin-left: 10px; font-style: italic;"></span>
-  </div>
-  <button>Gönder</button>
-</section>
-</form>
-<script>
-  const fileInput = document.getElementById('fileInput');
-  const fileNameDisplay = document.getElementById('fileName');
+            Çalışmalar en kısa sürede tamamlanacak, hizmetlerimiz
+            yeniden erişime açılacaktır.<br><br>
 
-  fileInput.addEventListener('change', () => {
-    if (fileInput.files.length > 0) {
-      fileNameDisplay.textContent = fileInput.files[0].name;
-    } else {
-      fileNameDisplay.textContent = '';
-    }
-  });
-</script>
+            Anlayışınız ve sabrınız için teşekkür ederiz.
+        </div>
 
-</section><section id="Ara">
-<h2>Ara</h2>
-<form>
-<input type="text" placeholder="Arama yap..." />
-<button type="submit">Ara</button>
-</form>
-</section><footer>
-
-<p>© 2025 Burak KOÇ® BKWEB , Burak KOÇ NETWORK™ (BKN@t™) , Burak KOÇ Bilişim Sistemleri (BKBİS) - Tüm Hakları Saklıdır. Kullanım ve Telif Hakları bildiriminde belirtilen kurallar çerçevesinde hizmet sunulmaktadır. </p>
-
-</footer><script>
-// Saat ve tarih
-function istanbulSaatGuncelle(){
-  const now = new Date();
-  const trTime = new Date(now.toLocaleString("en-US",{timeZone:"Europe/Istanbul"}));
-  const gunler=["Hoş Geldiniz... İyi Günler ve Tatiller Dileriz... Pazar","Hoş Geldiniz... İyi Günler Dileriz... Pazartesi","Hoş Geldiniz... İyi Günler Dileriz... Salı","Hoş Geldiniz... İyi Günler Dileriz... YILBAŞI GECENİZ KUTLU OLSUN. Çarşamba","Hoş Geldiniz... İyi Günler Dileriz... YILBAŞINIZ KUTLU OLSUN. Perşembe","Hoş Geldiniz... İyi Günler Dileriz... Cumamız Mübarek Olsun... Cuma","Hoş Geldiniz... İyi Günler ve Tatiller Dileriz... Cumartesi"];
-  const saat = String(trTime.getHours()).padStart(2,"0");
-  const dakika = String(trTime.getMinutes()).padStart(2,"0");
-  const saniye = String(trTime.getSeconds()).padStart(2,"0");
-  const gun = gunler[trTime.getDay()];
-  const tarih = String(trTime.getDate()).padStart(2,"0");
-  const ay = String(trTime.getMonth()+1).padStart(2,"0");
-  const yil = trTime.getFullYear();
-  document.getElementById("saat-tarih").innerHTML =
-    `${tarih}/${ay}/${yil} - ${gun} &nbsp;&nbsp; ${saat}:${dakika}:${saniye}`;
-}
-setInterval(istanbulSaatGuncelle,1000);
-istanbulSaatGuncelle();
-// Üç nokta menü
-const ucNokta = document.getElementById("uc-nokta");
-const menuPanel = document.getElementById("menu-panel");
-ucNokta.addEventListener("click", ()=>{ menuPanel.classList.toggle("show"); });
-document.addEventListener("click", (e)=>{
-  if(!ucNokta.contains(e.target) && !menuPanel.contains(e.target)){
-    menuPanel.classList.remove("show");
-  }
-});
-
-// Erişilebilirlik butonları
-const kontrastBtn = document.getElementById("kontrast-btn");
-const buyutBtn = document.getElementById("buyut-btn");
-const kucultBtn = document.getElementById("kucult-btn");
-const disleksiBtn = document.getElementById("disleksi-btn");
-
-kontrastBtn.addEventListener("click", ()=>{ document.body.classList.toggle("yuksek-kontrast"); });
-buyutBtn.addEventListener("click", ()=>{ document.body.style.fontSize="18px"; });
-kucultBtn.addEventListener("click", ()=>{ document.body.style.fontSize="14px"; });
-disleksiBtn.addEventListener("click", ()=>{ document.body.classList.toggle("disleksi-mod"); });
-const sesliOkumaBtn = document.getElementById("sesli-okuma-btn");
-
-let konusmaAktif = false;
-let utterance;
-
-sesliOkumaBtn.addEventListener("click", () => {
-  if (!konusmaAktif) {
-    // Sayfadaki görünür metni alalım, istersen özelleştirebiliriz
-    const metin = document.body.innerText;
-
-    utterance = new SpeechSynthesisUtterance(metin);
-    utterance.lang = "tr-TR"; // Türkçe için dil ayarı
-
-    speechSynthesis.speak(utterance);
-    konusmaAktif = true;
-    sesliOkumaBtn.textContent = "🔇 Okumayı Durdur";
-  } else {
-    speechSynthesis.cancel();
-    konusmaAktif = false;
-    sesliOkumaBtn.textContent = "🔊 Sesli Okuma";
-  }
-});
-
-
-  function translatePage(lang) {
-    const currentUrl = window.location.href;
-    const encodedUrl = encodeURIComponent(currentUrl);
-    const translateUrl = `https://translate.google.com/translate?hl=${lang}&sl=auto&tl=${lang}&u=${encodedUrl}`;
-    window.location.href = translateUrl;
-  }
-</script>
+    </div>
 
 </body>
 </html>
