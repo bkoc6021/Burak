@@ -2,10 +2,10 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>T.C. BURAK KOÇ BAKIM ÇALIŞMASI YAPILMAKTADIR.</title>
+    <title>T.C. BURAK KOÇ Bakım Çalışması Yapılmaktadır</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Favicon (opsiyonel) -->
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
     <style>
@@ -13,12 +13,27 @@
             margin: 0;
             padding: 0;
             font-family: "Times New Roman", Times, serif;
-            background-color: #fdf2f2;
+
+            /* ARKA PLAN RESMİ */
+            background-image: url("arkaplan.jpg");
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        /* Resmin üstüne açık katman */
+        .overlay {
+            min-height: 100vh;
+            background-color: rgba(255, 242, 242, 0.92);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
         }
 
         .wrapper {
             max-width: 900px;
-            margin: 60px auto;
+            margin-top: 60px;
             text-align: center;
         }
 
@@ -51,25 +66,27 @@
 </head>
 <body>
 
-    <div class="wrapper">
+    <div class="overlay">
+        <div class="wrapper">
 
-        <!-- LOGO -->
-        <img src="T.C. Burak KOÇ Logo.png" class="logo" alt="T.C. Burak KOÇ">
+            <!-- LOGO -->
+            <img src="T.C. Burak KOÇ Logo.png" class="logo" alt="T.C. Burak KOÇ">
 
-        <h1>Bakım Çalışması Yapılmaktadır</h1>
+            <h1>Bakım Çalışması Yapılmaktadır</h1>
 
-        <div class="box">
-            <strong>Değerli Ziyaretçimiz,</strong>
+            <div class="box">
+                <strong>Değerli Ziyaretçimiz,</strong>
 
-            Web sitemiz, yürütülmekte olan bakım çalışmaları sebebiyle
-            geçici olarak hizmet verememektedir.<br><br>
+                Web sitemiz, yürütülmekte olan bakım çalışmaları sebebiyle
+                geçici olarak hizmet verememektedir.<br><br>
 
-            Çalışmalar en kısa sürede tamamlanacak, hizmetlerimiz
-            yeniden erişime açılacaktır.<br><br>
+                Çalışmalar en kısa sürede tamamlanacak, hizmetlerimiz
+                yeniden erişime açılacaktır.<br><br>
 
-            Anlayışınız ve sabrınız için teşekkür ederiz.
+                Anlayışınız ve sabrınız için teşekkür ederiz.
+            </div>
+
         </div>
-
     </div>
 
 </body>
