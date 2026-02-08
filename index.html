@@ -1,78 +1,122 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <title>T.C. BURAK KOÇ Bakım Çalışması Yapılmaktadır. </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: "Times New Roman", Times, serif;
-
-            /* ARKA PLAN RESMİ */
-            background-image: url("arkaplan.jpg");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
-
-        .wrapper {
-            max-width: 900px;
-            margin: 60px auto;
-            text-align: center;
-        }
-
-        .logo {
-            width: 110px;
-            margin-bottom: 15px;
-        }
-
-        h1 {
-            color: #c62828;
-            font-size: 26px;
-            margin-bottom: 20px;
-        }
-
-        /* SADECE YAZI KUTUSU KIRMIZI */
-        .box {
-            background-color: #fde7e7;
-            border: 1px solid #f3caca;
-            border-radius: 6px;
-            padding: 25px 30px;
-            color: #5a2a2a;
-            font-size: 15px;
-            line-height: 1.7;
-        }
-
-        .box strong {
-            display: block;
-            margin-bottom: 12px;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>T.C. BURAK KOÇ</title>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
+  <header class="topbar" role="banner">
+    <div class="top-inner">
+      <div class="left">
+        <img src="logo.jpeg" alt="Site logosu" class="site-logo">
+        <div class="site-title">T.C. BURAK KOÇ</div>
+      </div>
 
-    <div class="wrapper">
+      <nav class="nav" role="navigation" aria-label="Ana menü">
+        <ul class="menu">
+          <li class="menu-item"><a href="#">Anasayfa</a></li>
 
-        <img src="T.C. Burak KOÇ Logo.png" class="logo" alt="T.C. Burak KOÇ">
+          <li class="menu-item has-sub">
+            <a href="#">Kurucu</a>
+            <ul class="submenu">
+              <li><a href="#">Sayın Burak KOÇ</a></li>
+              <li><a href="#">Kurucu Bilgileri</a></li>
+            </ul>
+          </li>
 
-        <h1>Bakım Çalışması Yapılmaktadır.</h1>
+          <li class="menu-item has-sub">
+            <a href="#">Başkanlığımız</a>
+            <ul class="submenu">
+              <li><a href="#">Başkan</a></li>
+              <li><a href="#">Yönetim</a></li>
+            </ul>
+          </li>
 
-        <div class="box">
-            <strong>Değerli Ziyaretçimiz,</strong>
-            Web sitemiz, yürütülmekte olan bakım çalışmaları sebebiyle
-            geçici olarak hizmet verememektedir.<br><br>
-            Çalışmalar en kısa sürede tamamlanacak; hizmetlerimiz
-            yeniden erişime açılacaktır.<br><br>
-            Anlayışınız ve sabrınız için teşekkür ederiz.
-        </div>
+          <li class="menu-item"><a href="#">Birimler</a></li>
+          <li class="menu-item"><a href="#">Hizmetler</a></li>
+          <li class="menu-item"><a href="#">Bağlantılar</a></li>
+          <li class="menu-item"><a href="#">Duyurular</a></li>
+          <li class="menu-item"><a href="#">İletişim</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
+  <main class="wrap" role="main">
+    <aside class="leftbox" aria-labelledby="gunun-baslik">
+      <div id="current-datetime" class="datetime" aria-live="polite">--</div>
+
+      <h2 id="gunun-baslik" class="box-title">Günün yazısı:</h2>
+      <div class="box-text" id="gunun-yazisi" contenteditable="false">
+        Pijamalı hasta yağız<br>şoföre çabucak güvendi
+      </div>
+    </aside>
+
+    <section class="content" aria-label="İçerik">
+      <div class="panel">
+        <img src="T.C. Burak KOÇ Logo.png" alt="T.C. Burak Koç arması" class="emblem">
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    BKNET bilişim 2026
+  </footer>
+
+  <!-- Erişilebilirlik butonu -->
+  <button id="acc-toggle" class="accessibility" title="Erişilebilirlik" aria-controls="access-panel" aria-expanded="false">♿</button>
+
+  <!-- Erişilebilirlik panel -->
+  <div id="access-panel" class="access-panel" role="dialog" aria-hidden="true" aria-label="Erişilebilirlik seçenekleri">
+    <h3>Erişilebilirlik</h3>
+
+    <div class="acc-row">
+      <button data-action="increase-font" class="acc-btn">Yazı Büyüt</button>
+      <button data-action="decrease-font" class="acc-btn">Yazı Küçült</button>
     </div>
 
+    <div class="acc-row">
+      <button data-action="toggle-contrast" class="acc-btn">Yüksek Kontrast</button>
+      <button data-action="toggle-invert" class="acc-btn">Renkleri Ters</button>
+    </div>
+
+    <div class="acc-row">
+      <label>Satır Aralığı</label>
+      <input type="range" id="line-spacing" min="1" max="2" step="0.1" value="1.4">
+    </div>
+
+    <div class="acc-row">
+      <label>Harf Aralığı</label>
+      <input type="range" id="letter-spacing" min="0" max="4" step="0.5" value="0">
+    </div>
+
+    <div class="acc-row">
+      <button data-action="toggle-font" class="acc-btn">Okuma Dostu Yazı</button>
+      <button data-action="toggle-images" class="acc-btn">Resimleri Gizle</button>
+    </div>
+
+    <div class="acc-row">
+      <button data-action="reset" class="acc-btn reset">Sıfırla</button>
+      <button id="access-close" class="acc-btn">Kapat</button>
+    </div>
+  </div>
+
+  <script src="scripts/accessibility.js"></script>
+
+  <script>
+    // Tarih ve saati TR yerelinde canlı göster
+    function updateDateTime() {
+      const now = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: '2-digit', day: '2-digit' };
+      const dateStr = now.toLocaleDateString('tr-TR', options);
+      const timeStr = now.toLocaleTimeString('tr-TR');
+      document.getElementById('current-datetime').innerHTML = dateStr + '<br>' + timeStr;
+    }
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+  </script>
 </body>
 </html>
