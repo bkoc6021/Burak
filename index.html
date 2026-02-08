@@ -35,13 +35,11 @@
     <section class="orta-kutu">
       <div class="arma-panel">
         <img src="T.C. Burak KOÇ Logo.png" alt="arma" class="arma">
-        <button class="acces-btn" id="acces-btn" aria-label="Erişilebilirlik"></button>
+        <div class="alt-kutu">BKNET bilişim 2026</div>
       </div>
     </section>
+    <button class="acces-btn" id="acces-btn" aria-label="Erişilebilirlik"></button>
   </main>
-  <footer class="footer">
-    BKNET bilişim 2026
-  </footer>
   <div id="acces-panel" class="acces-panel">
     <div class="ap-head">ERİŞEBİLİRLİK (CTRL+Y)
       <span id="acces-close" class="ap-close">Kapat X</span>
@@ -72,7 +70,8 @@
   <script src="scripts/accessibility.js"></script>
   <script>
     function formatTRDate(date) {
-      const days = ['Pazar','Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi'];
+      const days = ['Pazar','Pazartesi','Salı','Çarşamba','Perşembe','Cuma 
+                    Cumamız Mübarek Olsun','Cumartesi'];
       const gun = days[date.getDay()];
       const d = String(date.getDate()).padStart(2,'0');
       const m = String(date.getMonth()+1).padStart(2,'0');
