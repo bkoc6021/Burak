@@ -1,63 +1,107 @@
+Anladım — hemen görseldeki (Image 9–12) düzeni daha sıkı biçimde yansıtan, erişilebilirlik paneli (yandan açılan, içeriği görseldeki gibi olan), canlı tarih/saat ve sol kutu / profil kartı / orta arma paneli içeren güncellenmiş dosyaları hazırladım. Atatürk ve YouTube görselleri eklenmedi; favicon korunuyor/breadcrumb menüsü.
+- Arka plan: sayfa boyunca tekrar eden açık tonlu geometrik/desenli doku (hafif gri-bej motifli).
+- Sağ alt köşede yuvarlak erişilebilirlik ikonu (turuncu/korall renkli, içinde erişilebilirlik simgesi).
+- Renk paleti: kırmızı tonları (header/nav), açık gri/beyaz içerik panelleri, siyah/gri yazı.
+- Favicon/arka plan ve; metinleri sen düzenleyeceksin; saat/tarih canlı.
+
+Aşağıdaki üç dosyayı repodaki köküyle değiştir veya yeni bir branch oluşturup ekle. Uyguladıktan sonra sayfayı test et, görsel uyumsuzluğu varsa hızlıca ince ayar yaparım.
+
+```
+name=index.html
 <!doctype html>
 <html lang="tr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport logo dosyaları kullanılmış; footer’da “BKNET bilişim 2026” gibi küçük telif/metin bulunuyor.
+
+Image 9 (ilk fotoğraf — tarih/duyuru + armaya odaklı ana sayfa görünümü)
+- Sol sütunda dikey bir kutu: üst kısmında büyükçe tarih ve saat (ör.: “01.01.2026 Perşembe / 00:00:00”), altında “Günün yazısı:” başlığı ve birkaç sat" content="width=device-width,initial-scale=1" />
   <title>T.C. BURAK KOÇ</title>
   <link rel="icon" href="/favicon.ico">
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
+  <!-- Küçük üst satır -->
+  <div class="microbar">
+    <div class="micro-inner">
+      <div class="micro-left">Anasayfa / e-posta / S.S.Sırlık metin örneği (ör. “Pijamalı hasta yağız / şoföre çabucak güvendi”).
+- Orta-sağta geniş, açık arka planlı bir panel içinde yuvarlak bir arma/rozet görseli (orta planda, beyaz-gri panel).
+- Sayfanın alt sol köşesinde küçük footer yazısı.
+- Genel düzen: sola sabit duyuru kutusu, sağdaki geniş içerik alanı / English / Giriş</div>
+      <div class="micro-right"></div>
+    </div>
+  </div>
+
+  <!-- Büyük kırmızı bant -->
   <header class="topbar" role="banner">
     <div class="top-inner">
-      <div class="left">
-        <img src="logo.jpeg" alt="Site logosu" class="site-logo">
+      <div class="brand">
+        <img src="logo.jpeg" alt="Logo" class="site-logo">
         <div class="site-title">T.C. BURAK KOÇ</div>
       </div>
 
-      <nav class="nav" role="navigation" aria-label="Ana menü">
-        <ul class="menu">
-          <li class="menu-item"><a href="#">Anasayfa</a></li>
+ şeklinde.
 
-          <li class="menu-item has-sub">
-            <a href="#">Kurucu</a>
-            <ul class="submenu">
-              <li><a href="#">Sayın Burak KOÇ</a></li>
-              <li><a href="#">Kurucu Bilgileri</a></li>
-            </ul>
-          </li>
-
-          <li class="menu-item has-sub">
-            <a href="#">Başkanlığımız</a>
-            <ul class="submenu">
-              <li><a href="#">Başkan</a></li>
-              <li><a href="#">Yönetim</a></li>
-            </ul>
-          </li>
-
-          <li class="menu-item"><a href="#">Birimler</a></li>
-          <li class="menu-item"><a href="#">Hizmetler</a></li>
-          <li class="menu-item"><a href="#">Bağlantılar</a></li>
-          <li class="menu-item"><a href="#">Duyurular</a></li>
-          <li class="menu-item"><a href="#">İletişim</a></li>
-        </ul>
-      </nav>
+Image 10 (portre/kurucu kartının olduğu görünüm)
+- Üst bölüm ve nav aynı; sol üst kısımda içerik alanına yakın bir kart bulunuyor.
+- Kart içinde resmi çekilmiş bir portre fotoğrafı ve altında “Kurucu / Sayın Burak KOÇ” gibi isimlendirme metni (kartın arka planı açık gri panel şeklinde).
+- Geri kalan orta ve sağ alan büyük boş desenli arka plan olarak      <div class="top-right-spacer"></div>
     </div>
+
+    <!-- Breadcrumb / kırmızı linkler alt satır -->
+    <nav class="breadcrumb" aria-label="breadcrumb">
+      <a href="#" class="crumb">Kurucu</a> /
+      <a href="#" class="crumb">Başkanlığımız</a> /
+      <a href="#" class="crumb">Birimler</a> /
+      <a href="#" class="crumb">Hiz kalmış — sayfa oldukça geniş boşluk bırakıyor.
+- Yine sağ alt köşede erişilebilirlik simgesi görünüyor.
+
+Image 11 (erişilebilirlik paneli açık hâli)
+- Sağ tarafta açılmış dikey bir panel var; panel başlığı “ERİŞEBİLİRLİK [CTRL+Y] KAPAT X” gibi bir başlık içeriyor.
+- Panelin içinde çeşitli erişilebilirlik seçenekleri ve kontroller listelenmiş:metler</a> /
+      <a href="#" class="crumb">Bağlantılar</a> /
+      <a href="#" class="crumb">Duyurular</a> /
+      <a href="#" class="crumb">İletişim</a>
+    </nav>
   </header>
 
   <main class="wrap" role="main">
-    <aside class="leftbox" aria-labelledby="gunun-baslik">
+    <!-- Sol kutu: tarih + günün yazısı -->
+    <aside class="leftbox" aria-labelledby="gunun satır aralığı, metin büyüklüğü/okunabilirlik seçenekleri, renk/kontrast ayarları, okumayı kolaylaştırıcı seçenekler, resimleri gizle/göster vb. (liste maddeleri ayrıntılı biçimde yer almış).
+- Sol alt köşede sayfa metni “T.C. BURAK KOÇ 2026” olarak küçükçe duruyor.
+- Arka plan aynı desenli doku; üst kırmızı bant yine mevcut.
+
+-baslik">
       <div id="current-datetime" class="datetime" aria-live="polite">--</div>
 
       <h2 id="gunun-baslik" class="box-title">Günün yazısı:</h2>
-      <div class="box-text" id="gunun-yazisi" contenteditable="false">
+      <div class="box-text" id="gunun-yazisi">
         Pijamalı hasta yağız<br>şoföre çabucak güvendi
+      </div>
+
+      <!-- Profil kart variant (görselImage 12 (madde listesi / birimler menüsü görünümü)
+- Üstteki header/nav aynı.
+- Orta-sol kısımda açık gri arka planlı küçük bir panel içinde madde işaretli liste (bullet list) yer alıyor; listede “Basın ve halkla ilişkiler”, “Destek hizmetleri”, “İç denetim birimi” vb. gibi birimler/başlıklar sıralanmış.
+- Sağ alt erişilebilirlikdeki gibi sayfada farklı yerlerde gösterilecek) -->
+      <div class="profile-card">
+        <img src="burak.jpeg" alt="Kurucu" class="profile-pic">
+        <div class="profile-caption">
+          <div class="role">Kurucu</div>
+          <div class="name">Sayın Burak KOÇ</div>
+        </div>
       </div>
     </aside>
 
-    <section class="content" aria-label="İçerik">
+    <!-- Orta içerik alanı -->
+    simgesi yine mevcut.
+- Sayfa genelinde bol boşluk bırakılmış, içerik paneli küçük ve sola hizalı.
+
+Kısa değerlendirme / dikkat edilmesi gerekenler
+- Tasarım geleneksel, sabit kutu düzenli ve masaüstü odaklı bir şablon; büyük boş alanlar var.
+- Erişilebilirlik özellikleri (sağ panel + erişim düğmesi) mevcut ve detaylı seçenekler sunuyor.
+- Tarih/saat bölüm <section class="content" aria-label="İçerik alanı">
       <div class="panel">
-        <img src="T.C. Burak KOÇ Logo.png" alt="T.C. Burak Koç arması" class="emblem">
+        <img src="T.C. Burak KOÇ Logo.png" alt="Arma" class="emblem">
       </div>
     </section>
   </main>
@@ -66,57 +110,17 @@
     BKNET bilişim 2026
   </footer>
 
-  <!-- Erişilebilirlik butonu -->
-  <button id="acc-toggle" class="accessibility" title="Erişilebilirlik" aria-controls="access-panel" aria-expanded="false">♿</button>
+  <!-- Erişilebilirlik butonu sağ altta -->
+  <buttonünün görseli dinamik bir alanmış gibi gösterilmiş (saat ve tarih yer alıyor).
+- Sayfa öğeleri (logo, arma, portre, menü) hepsi ayrı paneller içinde yerleştirilmiş; pikseller bazında tam eşleşme isteniyorsa tipografi (kullanılan font), kutu boyutları ve boşluklar hassas şekilde eşleştirilmeli.
 
-  <!-- Erişilebilirlik panel -->
-  <div id="access-panel" class="access-panel" role="dialog" aria-hidden="true" aria-label="Erişilebilirlik seçenekleri">
-    <h3>Erişilebilirlik</h3>
+İstersen şimdi şunları yapabilirim:
+- Hedefledi id="acc-toggle" class="accessibility" title="Erişilebilirlik [CTRL+Y]" aria-controls="access-panel" aria-expanded="false">♿</button>
 
-    <div class="acc-row">
-      <button data-action="increase-font" class="acc-btn">Yazı Büyüt</button>
-      <button data-action="decrease-font" class="acc-btn">Yazı Küçült</button>
-    </div>
+  <!-- Sağdan kayan / sabit erişilebilirlik paneli (görseldeki uzun liste) -->
+  <aside id="access-panel" class="access-panel" role="dialog" aria-hidden="true" aria-label="Erişilebilirlik seçenekleri">
+    <div class="access-header">
+ğin tek bir ekran görüntüsünü (ör. Image 9) “piksel-by-piksel” yakınsama hedefiyle yeniden oluştururum — bunun için hangi görüntü olduğunu netleştir ve font/ölçü toleransını belirt.
+- Ya da mevcut repo dosyalarına göre görünümü daha da incelikli hale getirecek bir düzeltme listesi hazırlar, değişiklikleri patch/PR olarak sunarım.
 
-    <div class="acc-row">
-      <button data-action="toggle-contrast" class="acc-btn">Yüksek Kontrast</button>
-      <button data-action="toggle-invert" class="acc-btn">Renkleri Ters</button>
-    </div>
-
-    <div class="acc-row">
-      <label>Satır Aralığı</label>
-      <input type="range" id="line-spacing" min="1" max="2" step="0.1" value="1.4">
-    </div>
-
-    <div class="acc-row">
-      <label>Harf Aralığı</label>
-      <input type="range" id="letter-spacing" min="0" max="4" step="0.5" value="0">
-    </div>
-
-    <div class="acc-row">
-      <button data-action="toggle-font" class="acc-btn">Okuma Dostu Yazı</button>
-      <button data-action="toggle-images" class="acc-btn">Resimleri Gizle</button>
-    </div>
-
-    <div class="acc-row">
-      <button data-action="reset" class="acc-btn reset">Sıfırla</button>
-      <button id="access-close" class="acc-btn">Kapat</button>
-    </div>
-  </div>
-
-  <script src="scripts/accessibility.js"></script>
-
-  <script>
-    // Tarih ve saati TR yerelinde canlı göster
-    function updateDateTime() {
-      const now = new Date();
-      const options = { weekday: 'long', year: 'numeric', month: '2-digit', day: '2-digit' };
-      const dateStr = now.toLocaleDateString('tr-TR', options);
-      const timeStr = now.toLocaleTimeString('tr-TR');
-      document.getElementById('current-datetime').innerHTML = dateStr + '<br>' + timeStr;
-    }
-    setInterval(updateDateTime, 1000);
-    updateDateTime();
-  </script>
-</body>
-</html>
+Hangi görseli birebir hedeflememi istersin? (ör. “Image 9’i aynen yap”, veya “Image 10 kart düzenini aynen yap”)
