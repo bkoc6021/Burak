@@ -1,12 +1,12 @@
 body {
   margin:0;
   font-family:'Times New Roman',serif;
-  background:url('/arkaplan.jpg') repeat;
+  background:url('arkaplan.jpg') repeat;
   color:#222;
 }
 .microbar {
-  background:#c0392b;
-  color:#fff;
+  background:#fff;
+  color:#222;
   font-size:13px;
   height:20px;
   padding:4px 8px;
